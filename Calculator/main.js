@@ -16,11 +16,22 @@ $(document).ready(function () {
     } else if (operation === "divition") {
       if (num2 === 0) {
         $("#result").html(
-          '<div class="alert alert-danger" role="alert"> Cannot Divition with ZERO </div>'
+          '<div class="alert alert-danger" role="alert"> Cannot Divide by zero! </div>'
         );
         return;
       }
       result = num1 / num2;
+    } else {
+      $("#result").html(
+        '<div class="alert alert-danger" role="alert">Please select an operation!</div>'
+      );
+      return;
     }
+
+    $("#result").html(
+      '<div class="alert alert-success" role="alert"> Result: ' +
+        result +
+        "</div>"
+    );
   });
 });
