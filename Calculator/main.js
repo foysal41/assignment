@@ -5,5 +5,22 @@ $(document).ready(function () {
     let num1 = parseFloat($("#num1").val());
     let num2 = parseFloat($("#num2").val());
     let operation = $("#operation").val();
+
+    let result;
+    if (operation === "addition") {
+      result = num1 + num2;
+    } else if (operation === "subtraction") {
+      result = num1 - num2;
+    } else if (operation === "multiplication") {
+      result = num1 * num2;
+    } else if (operation === "divition") {
+      if (num2 === 0) {
+        $("#result").html(
+          '<div class="alert alert-danger" role="alert"> Cannot Divition with ZERO </div>'
+        );
+        return;
+      }
+      result = num1 / num2;
+    }
   });
 });
